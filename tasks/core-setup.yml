@@ -1,0 +1,30 @@
+- name: Install System Packages
+  package:
+    name: ["htop", "git", "curl", "build-essential"]
+    state: latest
+  tags:
+    - install
+    - core
+
+
+# set up snap support
+- name: system setup | tweaks | install snapd
+  package:
+    name: snapd
+    state: latest
+  tags:
+    - install
+    - core
+    - packages
+    - snap
+
+# Ensure core snap is installed
+- name: system setup | tweaks | install/update core snap
+  snap:
+    name:  core
+    state: present
+  tags:
+    - install
+    - core
+    - packages
+    - snap

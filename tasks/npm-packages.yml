@@ -1,0 +1,39 @@
+- name: install yarn
+  npm:
+    name: yarn
+    global: yes
+  tags:
+    - install
+    - nodejs
+
+- name: install eslint
+  npm:
+    name: eslint
+    global: yes
+  tags:
+    - install
+    - nodejs
+    
+- name: install prettier
+  npm:
+    name: prettier
+    global: yes
+  tags:
+    - install
+    - nodejs
+
+- name: install typescript
+  npm:
+    name: typescript
+    global: yes
+  tags:
+    - install
+    - nodejs
+
+- name: install ts-node
+  npm:
+    name: ts-node
+    global: yes
+  tags:
+    - install
+    - nodejs

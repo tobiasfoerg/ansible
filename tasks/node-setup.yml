@@ -1,0 +1,9 @@
+- name: install nodejs
+  become: true
+  package:
+    name: ["nodejs", "npm"]
+    state: latest
+  tags:
+    - install
+    - core
+    - nodejs

@@ -1,0 +1,41 @@
+  # AWS CLI
+- name: download the aws cli bundle
+  get_url:
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /tmp/aws-cli-v2.zip
+  register: aws_cli_download_bundle
+
+- name: unarchive aws cli bundle
+  unarchive:
+    src: /tmp/aws-cli-v2.zip
+    dest: /tmp
+    copy: no
+    creates: /tmp/aws-cli-v2
+  when: aws_cli_download_bundle.changed
+  register: aws_cli_unarchive_installer
+
+- name: install aws cli
+  become: true
+  shell: ./tmp/aws-cli-v2/aws/install
+  when: aws_cli_unarchive_installer.changed
+
+  # AWS SAM CLI
+- name: download the aws sam cli bundle
+  get_url:
+    url: https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+    dest: /tmp/aws-sam-cli.zip
+  register: aws_sam_cli_download_bundle
+
+- name: unarchive aws sam cli bundle
+  unarchive:
+    src: /tmp/aws-sam-cli.zip
+    dest: /tmp
+    copy: no
+    creates: /tmp/aws-sam-cli
+  when: aws_sam_cli_download_bundle.changed
+  register: aws_sam_cli_unarchive_installer
+
+- name: install aws sam cli
+  become: true
+  shell: ./tmp/aws-sam-cli/install
+  when: aws_sam_cli_unarchive_installer.changed

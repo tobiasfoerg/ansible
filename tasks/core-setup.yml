@@ -1,6 +1,6 @@
 - name: Install System Packages
   package:
-    name: ["htop", "git", "curl", "build-essential"]
+    name: ["htop", "git", "curl", "build-essential", "unzip"]
     state: latest
   tags:
     - install

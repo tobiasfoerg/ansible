@@ -29,7 +29,7 @@
 - name: unarchive aws sam cli bundle
   unarchive:
     src: /tmp/aws-sam-cli.zip
-    dest: /tmp
+    dest: /tmp/aws-sam-cli
     copy: no
     creates: /tmp/aws-sam-cli
   when: aws_sam_cli_download_bundle.changed

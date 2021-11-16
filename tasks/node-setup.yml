@@ -1,6 +1,6 @@
 - name: install nodejs
   become: true
-  package:
+  apt:
     name: ["nodejs", "npm"]
     state: latest
   tags:

@@ -6,6 +6,7 @@
   tags:
     - config
     - git-personal
+    
 - name: Git personal setup name
   git_config:
     name: user.name

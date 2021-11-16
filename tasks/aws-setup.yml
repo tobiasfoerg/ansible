@@ -8,7 +8,7 @@
 - name: unarchive aws cli bundle
   unarchive:
     src: /tmp/aws-cli-v2.zip
-    dest: /tmp
+    dest: /tmp/aws-cli-v2
     copy: no
     creates: /tmp/aws-cli-v2
   when: aws_cli_download_bundle.changed

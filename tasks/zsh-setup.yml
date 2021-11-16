@@ -13,7 +13,7 @@
 
 - name: check that folder exists
   stat:
-    path: /home/tfoerg/.oh-my-zsh
+    path: ~/.oh-my-zsh
   register: oh_my_stats
   tags:
     - install
